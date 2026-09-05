@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>내 서재 - 독서 기록</title>
+  <meta name="description" content="읽은 책을 책장처럼 기록하는 개인용 독서 기록 앱" />
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#F7F5F0" />
+
+  <!-- iOS 홈 화면 추가용 -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="내 서재" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+
+  <link rel="icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div>
+      <h1 class="title">내 서재</h1>
+      <p class="subtitle">
+        <span id="stats-text"></span><span id="saving-tag" class="saving hidden"> · 저장 중…</span>
+      </p>
+    </div>
+    <div class="header-actions">
+      <button class="btn-ghost" id="backup-btn">백업</button>
+      <button class="btn-primary" id="add-btn">+ 책 추가</button>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab" id="tab-shelf">책장</button>
+    <button class="tab" id="tab-list">목록</button>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" id="search-input" class="search-input" placeholder="제목·저자 검색" />
+    <button type="button" id="search-clear-btn" class="search-clear-btn hidden">지우기</button>
+  </div>
+
+  <div id="error-banner" class="error-banner hidden"></div>
+
+  <div id="book-view"></div>
+  <div id="detail-host"></div>
+  <div id="form-host"></div>
+  <div id="confirm-host"></div>
+  <div id="backup-host"></div>
+  <div id="datepicker-host"></div>
+
+  <!-- 엑셀 백업/복원용 (오프라인 대비 서비스워커가 자동 캐싱) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
