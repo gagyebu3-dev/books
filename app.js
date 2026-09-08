@@ -3,6 +3,7 @@ const GENRES = [
   { name: "경매", color: "#A5A14A" },
   { name: "법인", color: "#8EA54A" },
   { name: "경제", color: "#74A54A" },
+  { name: "경영", color: "#66A550" },
   { name: "뇌과학", color: "#59A54A" },
   { name: "심리학", color: "#4AA555" },
   { name: "자기관리", color: "#4AA56F" },
@@ -15,6 +16,7 @@ const GENRES = [
   { name: "세계지리", color: "#734AA5" },
   { name: "한국사", color: "#8D4AA5" },
   { name: "운동", color: "#A54AA2" },
+  { name: "건강", color: "#B9508F" },
   { name: "주식", color: "#A54A88" },
   { name: "유튜브", color: "#A54A6D" },
   { name: "만화", color: "#A54A52" },
@@ -364,7 +366,9 @@ function buildShelfRow(items) {
     }
 
     const width = columns === 2 ? baseWidth + Math.ceil(fontSize * 1.2) + 6 : baseWidth;
-    const topRatedOutline = b.rating === 5 ? "outline:3px solid #3672B0;outline-offset:1px;" : "";
+    const topRatedOutline =
+      b.rating === 6 ? "outline:3px solid #B65C5C;outline-offset:1px;" :
+      b.rating === 5 ? "outline:3px solid #3672B0;outline-offset:1px;" : "";
 
     const spine = el(
       "button",
